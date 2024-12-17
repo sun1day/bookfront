@@ -18,8 +18,11 @@ $(document).ready(function(){
         data: JSON.stringify(params),  
         contentType: "application/json; charset=utf-8",  
         dataType: "json", 
-        success: function(data) {  
-            console.log(data);  
+        success: function(response) {  
+            console.log(response);  
+            let data = response.data;
+            console.log(data.token)
+            localStorage.setItem("token", data.token)
         },
         error: function(xhr,status,error) {
         }
